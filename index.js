@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt'); //pw hasing
 const saltRounds = 12;
 const app = express();
 const port = process.env.PORT || 3000; //ports
-const expireTime = 24*60*60*1000 // expires after a day
+const expireTime = 1*60*60*1000 // expires after a day
 
 
 
