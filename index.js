@@ -139,11 +139,9 @@ app.post('/signUpSubmit', (req, res) =>{
 
     //add user to db and add create a session
     createUser(client, {username: name, password: hashedPassword, email: email});
-    createSession(client, {
-        Expiretime: req.session.cookie.maxAge=expireTime,
-        Session: req.session.username=name,
-        authenticated: req.session.authenticated=true
-    })
+    req.session.cookie.maxAge=expireTime,
+    req.session.username=name,
+    req.session.authenticated=true
 
     //random num
     var num = Math.floor(Math.random() * 3 + 1)
